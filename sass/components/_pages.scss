@@ -1,0 +1,128 @@
+
+body {
+  background: $gray;
+  @include filter-gradient($gray, #000, vertical);
+  @include background-image(linear-gradient(top, $gray 0%, #000 100%));
+
+  color: $gray;
+
+  #page {margin: 0.25em 0.25em 0.5em 0.25em;}
+
+  .header-wrapper {
+    background: $cream;
+    @include rounded-bottom;
+    position: relative;
+    z-index: 4;
+    padding: $corner-radius 0;
+  }
+  .main-wrapper {
+    background: $white;
+    position: relative;
+    z-index: 3;
+    @include shifted-top;
+    @include rounded-bottom;
+    #main {padding-bottom: $corner-radius;}
+    #content {padding: $corner-radius;}
+    #navigation {
+      padding-left: 0;
+      padding-right: 0;
+      nav {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+      }
+    }
+    .sidebar {padding: $corner-radius;}
+
+  }
+  .triptych-wrapper {
+    @include shifted-top;
+    @include rounded-bottom;
+    z-index: 2;
+    position: relative;
+    background: $teal;
+    @include filter-gradient(#1a4f59, #08323a, vertical);
+    @include background-image(linear-gradient(top, #1a4f59 0%,#08323a 100%));
+    color: $white;
+    a {text-decoration: none; &:hover{text-decoration: underline;}}
+    a, strong {color: $teal_accent;}
+
+    .region {
+      padding: $corner-radius;
+    }
+  }
+
+  .footer-wrapper {
+    @include shifted-top;
+    @include rounded-bottom;
+    z-index: 1;
+    position: relative;
+    background: $caramel;
+    @include filter-gradient(#905a27, #5e340d, vertical); // IE6-9
+    @include background-image(linear-gradient(top, #905a27 0%,#5e340d 100%));
+    color: $white;
+    a {color: $white;}
+
+    #footer {padding-left: $corner-radius; padding-right: $corner-radius;}
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 699px) {
+  body {
+    .main-wrapper {
+
+      #navigation {
+        background: $white;
+        @include shifted-top;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 699px) {
+  body {
+    .main-wrapper {
+      background: $caramel;
+      margin-top: 0;
+      padding-top: 0;
+
+      #navigation {
+        @include box-sizing(content-box);
+      }
+
+      #main {padding-bottom: 0;}
+
+      #content {
+        background: $white;
+        position: relative;
+        z-index: 1;
+      }
+      .region-sidebar-second {
+        background: $white;
+        @include rounded-bottom;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 479px) {
+  body {
+    .main-wrapper {
+
+      #main {}
+
+      #navigation {
+        margin: 0;
+        line-height: normal;
+        background: $white;
+      }
+
+      #content {
+        @include shifted-top;
+        padding-top: 2 * $corner-radius;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

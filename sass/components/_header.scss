@@ -1,0 +1,85 @@
+
+/**
+ * Branding header.
+ */
+
+/* Wrapping link for logo. */
+.header__logo {
+  margin: 0 auto 0.5em;
+  padding: 0;
+  max-width: 300px;
+  display: block;
+}
+
+/* Logo image. */
+.header__logo-image {
+  vertical-align: bottom;
+}
+
+/* Wrapper for website name and slogan. */
+.header__name-and-slogan {
+  clear: left;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* The name of the website. */
+.header__site-name {
+  margin: 0;
+  @include adjust-font-size-to( $h1-font-size );
+}
+
+/* The link around the name of the website. */
+.header__site-link {
+  &:link,
+  &:visited {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+/* The slogan (or tagline) of a website. */
+.header__site-slogan {
+  margin: 0;
+}
+
+/* The secondary menu (login, etc.) */
+.header__secondary-menu {
+  float: right;
+}
+
+/* Wrapper for any blocks placed in the header region. */
+.header__region {
+  /* Clear the logo. */
+  clear: both;
+}
+
+@media all and (min-width: 375px) {
+  .header__site-slogan {
+    @include comment;
+  }
+}
+
+@media all and (min-width: 480px) {
+  .header__logo {width: 400px;}
+}
+
+@media all and (min-width: 700px) {
+  .header__logo {
+    float: left;
+    width: 400px;
+    max-width: 400px;
+  }
+  .header__site-slogan {float: right;}
+}
+
+@media all and (min-width: 830px) {
+  .header__logo {margin: 0 0 -2em 0;}
+  .header__name-and-slogan {clear: left; text-align: right; float: none;}
+}
+

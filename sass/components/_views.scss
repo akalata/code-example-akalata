@@ -1,0 +1,32 @@
+
+
+#main {
+  .view-content {
+    .views-row {
+      padding: 1.5em 0;
+      border-bottom: 1px dotted $teal;
+
+      &.views-row-first {padding-top: 0;}
+      &.views-row-last {border-bottom-width: 0;}
+    }
+  }
+
+  .sidebars {
+    .view-content {
+      .views-row {
+        padding: 0.75em 0;
+        margin: 0 20px;
+        &.views-row-first {padding-top: 0;}
+      }
+    }
+  }
+}
+
+
+.view-blog {
+  .node-title {
+    a {
+      text-decoration: none;
+    }
+  }
+}

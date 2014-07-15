@@ -1,0 +1,54 @@
+
+#footer {
+
+  font-size: 0.85em;
+
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover {text-decoration: underline;}
+  }
+
+  ul.social {
+    li {
+      display: inline;
+      span {display: none;}
+      a {margin-left: 0.5em;}
+    }
+  }
+
+}
+
+@media screen and (min-width: 481px) {
+  #footer {
+    ul.copyright,
+    ul.social {
+      width: 50%;
+      float: left;
+    }
+    p.trademark {clear: both; text-align: right;}
+  }
+}
+
+@media screen and (min-width: 830px) {
+   #footer {
+    ul.copyright,
+    ul.social {
+      width: 100%;
+      float: none;
+    }
+    ul.copyright {
+      li {
+        display: inline-block;
+        padding: 0 0.5em;
+
+        &:first-child {border-left-width: 0;}
+      }
+    }
+  }
+}
